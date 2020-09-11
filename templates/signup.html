@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page">
+  <div class="container">
+      <form class="formself form-group" action="" method="POST" novalidate>
+        <h1 class="text-center">Sign up</h1>
+
+          {{form.hidden_tag()}}
+            <p>
+              {{ form.username.label }} 
+               
+                {{ form.username(class_="form-control") }}
+                {% for error in form.username.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+            </p>
+            <p>
+            {{ form.email.label }}
+            {{ form.email(class_="form-control") }}
+            {% for error in form.email.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+            {{ form.pass_hash.label }}
+            {{ form.pass_hash(class_="form-control") }}
+                {% for error in form.pass_hash.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            <input type="submit" value="submit" class="btn btn-dark form-control">
+        </p>
+        <p>Already have an account <a href="/login">Log in </a> here.</p>
+      </form>
+  </div>
+</section>
+{% endblock %}

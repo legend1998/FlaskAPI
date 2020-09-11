@@ -1,0 +1,122 @@
+body{
+    background: linear-gradient(-45deg,rgb(84, 136, 233),rgb(88, 173, 241));
+    background-attachment: fixed;
+
+}
+
+.section2{
+    background: url('./pics/accomplishment-action-adult-adventure-372098.jpg');
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.formself{
+    position: absolute;
+    width: 35%;
+    min-width: 400px;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    padding: 10px 40px;
+    background: rgba(255, 255, 255, 0.829);
+    box-shadow: 0 0 20px 5px white;
+}
+.emailpage{
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.945);
+    box-shadow: 0 0 20px 2px white;
+
+}
+.horcenter{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.page{
+    min-height: 140vh;
+}
+.notification{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    z-index: 12;
+    animation: closing 2s ease;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: initial;
+    
+
+}
+@keyframes closing{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        display: hidden;
+    }
+}
+
+.apitable{
+    background: #d0dfecf3;
+    border-radius: 5px;
+
+    box-shadow: 0 0 10px 5px ;
+    
+}
+
+.mainsection{
+    background: url('./pics/withered-leaves-photo-688830.jpg');
+    background-size: cover;
+    min-height: 100vh;
+  }
+.imagecontainer{
+    position: absolute;
+    text-align: center;
+    margin-top: 250px;
+    max-width: 50%;
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.image{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
+    overflow: hidden;
+    margin-left: 50%;
+    background: url('./pics/mypic.jpeg');
+    background-size: cover;
+    transform: translateX(-50%);
+}
+.mynameis .position{
+    font-size: 16px;
+    font-family: cursive;
+    color: rgb(233, 233, 233);
+}
+.name{
+    font-family: cursive;
+    margin-top: -20px;
+    margin-bottom: -10px;
+}
+.deletenote{
+    border-radius: 5px;
+    border: 1px black solid;
+}
+.fa{
+    display: none;
+}
+.deletenote:hover .fa{
+    display: block;
+}
+
+
+@media only screen and (max-width:700px){
+    .mycontainer{
+        min-width: 400px;
+    }
+    .apitable{
+        width: 90%;
+    }
+
+}

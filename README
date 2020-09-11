@@ -1,0 +1,115 @@
+first to run the app
+
+to activate the environment  use  test\Scripts\activate
+
+then python app.py
+
+
+
+First api for Admin only ................
+
+INSTRUCTION FOR ADMIN ---- able to modify user's data 
+
+note: for securing this api we use the token based authentication
+
+main route = http://127.0.0.1:500/api
+
+
+
+step  1 : LOGIN ---- for accessing this api , we will have to login First
+
+        use MEthod =GET
+
+        in authentication tab 
+            place regisetered username
+                             password
+            click send 
+
+            it will responds with token 
+            copy the token
+
+            """" this token is valid only for 30 mins then it will expire """""
+
+step 2 : OPeration and Route:
+
+
+    1.get all user ------ it will return all the user in the database with detail
+
+             http://127.0.0.1:500/api/user   MEthod= GET
+
+    2. get one user -------- it will return details of only one user. as 
+                            every user has its own public_id so query with selected user's public_id
+                    
+            http://127.0.0.1:500/api/user/<public_id>   MEthod= GET
+
+    
+    3. promote user ---------- it will promote current user to as Admin
+
+            http://127.0.0.1:500/api/user/<public_id>   MEthod= PUT
+
+    4. create user -------------------- it will create user
+
+            http://127.0.0.1:500/api/user   MEthod= POST       with json data
+
+            as {
+                'username':   'nameofusername',
+                'password,:  'some_password',
+                'email' : " email_address"
+            }
+
+
+    5. delete user -------------------- using user's public_id which is going to be deleted.
+                      
+             http://127.0.0.1:500/api/user/<public_id>   MEthod= PUT
+
+
+
+
+
+
+
+
+***************** API for USers **********************
+
+
+note ::: token is required
+            use authentication and get token
+
+
+MY notes 
+
+               main route  http://127.0.0.1:500/noteapi 
+            
+    1. create note :: 
+
+                route   http://127.0.0.1:500/noteapi method=POST
+
+                using json data as 
+
+                {
+                    "subject" : "name of sebject or anything note is based on",
+                    "note" : "this is note about above subject or topic."
+                }
+
+    2. get all notes on particular subject :::
+
+            route :   http://127.0.0.1:500/noteapi/<subject>    method=GET
+
+
+
+    3. get all notes of yours ::::
+
+            route  :   route :   http://127.0.0.1:500/noteapi/all   method=POST
+
+
+        
+
+
+
+
+
+
+
+
+
+

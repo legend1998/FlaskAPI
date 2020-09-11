@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page">
+    <br>
+<br><br>
+
+<div class="container text-center">
+    <form action="" method="post" novalidate>
+        {{form.hidden_tag()}}
+        <p>
+            {{ form.subject.label }}<br>
+            {{ form.subject() }}<br>
+            {% for error in form.subject.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.note.label }}<br>
+            {{ form.note() }}<br>
+            {% for error in form.note.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <input class="btn btn-primary" type="submit" value="add">
+    </form>
+</div>
+
+<br>
+
+{% if notes %}
+<div class="container apitable"><br>
+<h2 class="text-center">My Notes</h2> <br><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Serial No.</th>
+            <th>Subject</th>
+            <th>Notes</th>
+            <th>Date and Time</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for note in notes %}
+        <tr>
+            <td>
+               <a class="deletenote" href="/deletenote/{{note['delete_id']}}"><button><i class="fa fa-trash"></i></button></a> {{note['id']}}
+            </td>
+            <td>
+                {{note['subject']}}
+            </td>
+            <td>
+                {{note['note']}}
+            </td>
+            <td>
+                {{note['datetime']}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% else %}
+<div class="container text-center">  <h3 class="text-center text-white">Add some notes</h3>
+  </div>
+
+{% endif %}
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,156 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>Amiraizada  Personal</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='vendors/linericon/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='vendors/owl-carousel/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='vendors/lightbox/simpleLightbox.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='vendors/nice-select/css/nice-select.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='vendors/animate-css/animate.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='vendors/popup/magnific-popup.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='vendors/flaticon/flaticon.css')}}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/responsive.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    </head>
+<body >
+  
+        <!--================Header Menu Area =================-->
+        <header class="header_area navbar_fixed">
+          <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto">
+              <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/aboutme">Resume</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/api">MY notes</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/mail">MAIL</a></li> 
+              {% if user %}
+              <li class="nav-item"><a href="/projects" class="nav-link ">Projects/Documents </a></li>
+              <li class="nav-item"><a href="/logout" class="nav-link "> Log Out </a></li>
+              {% else %}
+              <li class="nav-item"><a href="/login" class="nav-link">Log In</a></li>
+
+              {% endif %}
+            </ul>
+          </div> 
+        </div>
+            </nav>
+          </div>
+      </header>
+      <!--================Header Menu Area =================-->
+     
+    {% with message = get_flashed_messages(with_categories=true) %}
+      {% if message %}
+      <div class="notification alert alert-{{message[0][0]}} center" role="alert" style="margin: 0;">
+          {{message[0][1]}}
+      </div>
+      {% endif %}
+    {% endwith %}
+  </div>
+{% block content %}
+<section class="mainsection" id="particles-js">
+  <div class="imagecontainer">
+    <div class="image">
+      <img src="{{url_for('static',filename='css/mypic.jpeg')}}" width="150px" height="150px" alt="">
+    </div>
+    <div class="description">
+      <p class="mynameis">my name is</p>
+      <h1 class="name text-white">amirizadpanah</h1>
+      <p class="position">computer software engineer</p>
+    </div>
+  </div>
+  <div class="container">
+  </div>
+</section>
+<section class="section2">
+  <div class="container-fluid" style="height: 100vh;background: rgba(0, 0, 0, 0.63);">
+    <br><br><br><br><br><br><br>
+    <div class="container mb-3 text-center">
+      <h1 class="text-white">Donate For us</h1> <br>
+      <input type="button" value="Donate" class="btn btn-primary">
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
+
+        <!--================Footer Area =================-->
+        <footer class="footer_area p_120">
+        	<div class="container">
+        		<div class="row footer_inner">
+        			<div class="col-lg-5 col-sm-6">
+        				<aside class="f_widget ab_widget">
+        					<div class="f_title">
+        						<h3>About Me</h3>
+        					</div>
+        					<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills,</p>        				
+        				</aside>
+        			</div>
+
+        			<div class="col-lg-2">
+        				<aside class="f_widget social_widget">
+        					<div class="f_title">
+        						<h3>Follow Me</h3>
+        					</div>
+        					<p>Let us be social</p>
+        					<ul class="list">
+        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+        						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+        					</ul>
+        				</aside>
+        			</div>
+        		</div>
+        	</div>
+        </footer>
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{{url_for('static',filename='js/jquery-3.3.1.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/popper.js')}}"></script>
+        <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/stellar.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/lightbox/simpleLightbox.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/nice-select/js/jquery.nice-select.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/isotope/imagesloaded.pkgd.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/isotope/isotope.pkgd.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/popup/jquery.magnific-popup.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/jquery.ajaxchimp.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/counter-up/jquery.waypoints.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendors/counter-up/jquery.counterup.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/mail-script.js')}}"></script>
+        <script src="{{url_for('static',filename='js/theme.js')}}"></script>
+        <script src="{{url_for('static',filename='js/parallax.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/particles.js')}}"></script>
+        <script src="{{url_for('static',filename='js/particles.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/app.js')}}"></script>
+        <script src="{{url_for('static',filename='js/main.js')}}"></script>
+    </body>
+</html>
